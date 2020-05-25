@@ -16,7 +16,9 @@ pipeline {
             }
         }
         stage('Build rhba') {
-            build job: 'simple-jenkins-project/master', propagate: false, wait: false
+            steps {
+                build job: 'simple-jenkins-project/master', propagate: false, wait: false
+            }
         }
     }
     post {
